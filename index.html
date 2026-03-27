@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="小粥的个人作品集网站 - Java 后端开发者，专注于 Spring Boot、MySQL、Redis 与微服务架构" />
+    <meta name="author" content="小粥 (xiao-zhou-study)" />
+    <meta name="theme-color" content="#090d14" />
+    <meta name="color-scheme" content="dark light" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="小粥 | Java 后端开发作品集" />
+    <meta property="og:description" content="Java 后端开发者，专注于工程化思维与业务落地" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://xiao-zhou-study.github.io" />
+    <meta property="og:image" content="/og-image.png" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="小粥 | Java 后端开发作品集" />
+    <meta name="twitter:description" content="Java 后端开发者，专注于工程化思维与业务落地" />
+
+    <!-- APlayer & Meting.js -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css" />
+
+    <title>小粥 | Java 后端开发作品集</title>
+  </head>
+  <body>
+    <div id="app"></div>
+    <script>
+      // Apply theme before Vue loads to prevent flash
+      (function() {
+        const saved = localStorage.getItem('themeMode') || 'system';
+        let theme = saved;
+        if (saved === 'system') {
+          theme = window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+        }
+        document.documentElement.setAttribute('data-theme', theme);
+      })();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/meting@2/dist/Meting.min.js"></script>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
